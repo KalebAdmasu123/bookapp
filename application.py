@@ -25,24 +25,24 @@ db = scoped_session(sessionmaker(bind=engine))
 def index():
     return "Project One: TODO"
 
-class User(db.Model):
-    __tablename__='users'
+#class User(db.Model):
+ #   __tablename__='users'
 
-    id=db.Column(db.Integer,primary_key=True)
-    name=db.Column(db.String,unique=True)
-    email=db.Column(db.String,unique=True)
+  #  id=db.Column(db.Integer,primary_key=True)
+   # name=db.Column(db.String,unique=True)
+   # email=db.Column(db.String,unique=True)
 
-@app.route("/new",method=['get','post'])
-def new():
-    if request.method=='POST':
-        email=request.form['email']
-        name=request.form['name']
+#@app.route("/new",method=['get','post'])
+#def new():
+ #   if request.method=='POST':
+  #      email=request.form['email']
+   #     name=request.form['name']
 
-        user=User(name=name,email=email)
-        db.session.add(user)
-        db.session.commit()
-    return render_template('new.html')
-@app.route("/user/<username>")
-def users(username):
-    user=User.query.filter_by(name)
+    #    user=User(name=name,email=email)
+     #   db.session.add(user)
+      #  db.session.commit()
+    #return render_template('new.html')
+#@app.route("/user/<username>")
+#def users(username):
+ #   user=User.query.filter_by(name)
 
